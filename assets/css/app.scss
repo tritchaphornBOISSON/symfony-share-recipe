@@ -1,0 +1,15 @@
+.carousel {
+  height: 400px;
+  .carousel-inner {
+    .carousel-item {
+      height: 400px;
+      img {
+        object-fit: cover;
+        object-position: center center;
+        width: 100%;
+      }
+    }
+
+  }
+
+}

@@ -16,6 +16,8 @@ class IngredientType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
+        $buttonLabel = $options['button_label'];
+
         $builder
             ->add('name', TextType::class, [
                 'attr' => [
@@ -36,7 +38,7 @@ class IngredientType extends AbstractType
                 ],
             ])
             ->add('submit', SubmitType::class, [
-                'label' => 'Add my ingredient',
+                'label' => $buttonLabel,
             ])
         ;
     }
@@ -45,6 +47,7 @@ class IngredientType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Ingredient::class,
+            'button_label' => 'Add my ingredient',
         ]);
     }
 }

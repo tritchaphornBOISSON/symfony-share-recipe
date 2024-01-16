@@ -7,10 +7,19 @@
 
 
     <section class="py-5 text-center container">
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endfor %}
         <div class="row py-lg-5">
             <div class="col-lg-6 col-md-8 mx-auto count">
                 <h1 class="fw-light">My ingredients</h1>
                 <p class="lead text-body-secondary">Here you can find all of your ingredients you have added so far, there are {{ ingredients.getTotalItemCount }} ingredients on your list.</p>
+                <p>
+                    <a href="{{ path('ingredient.new') }}" class="btn btn-secondary my-2">Add new ingredient</a>
+                </p>
             </div>
         </div>
     </section>

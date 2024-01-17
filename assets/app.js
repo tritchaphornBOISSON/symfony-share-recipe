@@ -8,4 +8,12 @@
 // any CSS you import will output into a single css file (app.css in this case)
 import './styles/app.css';
 
-console.log("webpack encore");
+
+let myDeleteIngredientEvent = document.querySelector('.delete-form')
+
+myDeleteIngredientEvent.addEventListener('click', function (event) {
+    let confirmed = confirm('Are you sure you want to delete this ingredient?');
+    if (!confirmed) {
+        event.preventDefault();
+    }
+});

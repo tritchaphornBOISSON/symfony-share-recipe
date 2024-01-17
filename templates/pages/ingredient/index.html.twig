@@ -33,7 +33,13 @@
                     <div class="card shadow-sm">
                         <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="https://images.pexels.com/photos/53588/tomatoes-vegetables-food-frisch-53588.jpeg" alt="">
                         <div class="card-body">
-                            <p class="card-text">{{ ingredient.name }}</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <p class="card-text">{{ ingredient.name }}</p>
+                                <div class="d-flex">
+                                    <a href="{{ path('ingredient.edit', {id: ingredient.id}) }}" type="button" class="btn btn-sm btn-outline-secondary">Edit</a>
+                                    <a href="{{ path('ingredient.delete', {id: ingredient.id}) }}" type="button" class="btn btn-sm btn-outline-secondary delete-form">Delete</a>
+                                </div>
+                            </div>
                             <div class="d-flex justify-content-between align-items-center">
                                 <small class="text-body-secondary">{{ ingredient.price }} €</small>
                                 <small class="text-body-secondary">Added on {{ ingredient.createdAt|date("d/m/Y") }}</small>
